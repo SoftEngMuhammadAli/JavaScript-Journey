@@ -1,0 +1,81 @@
+### **File 2: primitive_non_primitive_types.txt**
+
+```
+# Primitive and Non-Primitive Data Types in JavaScript
+
+## Primitive Data Types:
+- Immutable and stored directly in Stack memory.
+- Values are compared by **value**, not by reference.
+
+### Types of Primitive Data:
+1. **String**: A sequence of characters.
+   ```javascript
+   let name = "John";
+   ```
+
+2. **Number**: Any numeric value.
+   ```javascript
+   let age = 25;
+   ```
+
+3. **Boolean**: Logical values `true` or `false`.
+   ```javascript
+   let isLoggedIn = true;
+   ```
+
+4. **Null**: Represents the intentional absence of a value.
+   ```javascript
+   let empty = null;
+   ```
+
+5. **undefined**: Declared but uninitialized variable.
+   ```javascript
+   let notAssigned;
+   ```
+
+6. **Symbol**: Creates a unique value.
+   ```javascript
+   let uniqueID = Symbol("id");
+   ```
+
+7. **BigInt**: Large integers.
+   ```javascript
+   let bigNumber = 12345678901234567890n;
+   ```
+
+---
+
+## Non-Primitive Data Types:
+- Mutable and stored in Heap memory, with references in Stack memory.
+- Values are compared by **reference**, not by value.
+
+### Types of Non-Primitive Data:
+1. **Array**: Collection of ordered values.
+   ```javascript
+   let fruits = ["Apple", "Banana"];
+   ```
+
+2. **Object**: Collection of key-value pairs.
+   ```javascript
+   let person = { name: "John", age: 30 };
+   ```
+
+3. **Function**: Block of reusable code.
+   ```javascript
+   function greet() {
+       console.log("Hello, World!");
+   }
+   ```
+
+---
+
+## Key Differences Between Primitive and Non-Primitive Data:
+| **Aspect**              | **Primitive**                 | **Non-Primitive**              |
+|--------------------------|-------------------------------|---------------------------------|
+| **Mutability**           | Immutable                    | Mutable                        |
+| **Storage**              | Stack                        | Heap (reference in Stack)      |
+| **Comparison**           | By value                     | By reference                   |
+| **Example**              | String, Number, Boolean       | Objects, Arrays, Functions     |
+```
+
+---

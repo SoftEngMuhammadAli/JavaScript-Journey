@@ -1,0 +1,52 @@
+### **File 1: stack_heap_memory.txt**
+
+```
+# Stack and Heap Memory in JavaScript
+
+## Stack Memory:
+- Used to store **Primitive Data Types** (e.g., Number, String, Boolean, etc.).
+- Stores the **actual value** directly.
+- Memory is automatically managed (last-in, first-out structure).
+- Faster access compared to Heap memory.
+
+### Example:
+```javascript
+let a = 10; // Stored directly in Stack
+let b = a;  // Copies the value from `a`
+b = 20;
+
+console.log(a); // Output: 10 (original value remains unchanged)
+console.log(b); // Output: 20 (new value is independent of `a`)
+```
+
+---
+
+## Heap Memory:
+- Used to store **Non-Primitive Data Types** (e.g., Objects, Arrays, Functions).
+- Stores the **reference** (pointer) in the Stack and the actual data in the Heap.
+- Memory management requires garbage collection to free unused data.
+- Slower access compared to Stack memory.
+
+### Example:
+```javascript
+let obj1 = { name: "John" }; // Object is stored in Heap, reference is in Stack
+let obj2 = obj1; // Reference (not value) is copied
+obj2.name = "Jane";
+
+console.log(obj1.name); // Output: "Jane" (both references point to the same object)
+console.log(obj2.name); // Output: "Jane" (modification is reflected in both references)
+```
+
+---
+
+## Key Differences Between Stack and Heap:
+| **Aspect**         | **Stack**                      | **Heap**                      |
+|---------------------|--------------------------------|--------------------------------|
+| **Data Type**       | Primitive                     | Non-Primitive                 |
+| **Storage**         | Actual Value                  | Reference in Stack, Object in Heap |
+| **Access Speed**    | Fast                          | Slower                        |
+| **Management**      | Automatic (LIFO)             | Requires garbage collection   |
+| **Example**         | Numbers, Strings, Booleans    | Objects, Arrays, Functions    |
+```
+
+---
