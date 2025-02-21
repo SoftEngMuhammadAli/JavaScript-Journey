@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Addition Calculator</title>
+        <style>
+            /* General Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, sans-serif;
+            }
+
+            /* App Bar Styling */
+            .app-bar {
+                background-color: #007bff;
+                color: white;
+                padding: 15px 20px;
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            /* Body Styling */
+            body {
+                background-color: #f4f4f9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                padding-top: 60px;
+                /* To account for the fixed App Bar */
+            }
+
+            /* Form Styling */
+            form {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+            }
+
+            /* Input Field Styling */
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            input[type="text"]:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+
+            input[type="text"][readonly] {
+                background-color: #e9ecef;
+                cursor: not-allowed;
+            }
+
+            /* Button Styling */
+            input[type="button"] {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            input[type="button"]:hover {
+                background-color: #0056b3;
+            }
+
+            /* Label Styling */
+            label {
+                font-weight: bold;
+                display: block;
+                margin-top: 10px;
+                text-align: left;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 400px) {
+                form {
+                    width: 90%;
+                }
+            }
+        </style>
+
+        <script>
+            function calculateData() {
+                var value1 = parseInt(document.calculatorForm.num1.value);
+                var value2 = parseInt(document.calculatorForm.num2.value);
+                var resultInput = document.calculatorForm.result;
+
+                if (isNaN(value1) || isNaN(value2)) {
+                    alert("Please enter valid numbers!");
+                    return;
+                }
+
+                resultInput.value = value1 + value2;
+            }
+        </script>
+    </head>
+
+    <body>
+        <!-- App Bar -->
+        <div class="app-bar">Calculator</div>
+
+        <!-- Calculator Form -->
+        <form name="calculatorForm">
+            <label for="num1">Number 1:</label>
+            <input type="text" name="num1" id="num1" placeholder="Enter Number 1" required><br>
+
+            <label for="num2">Number 2:</label>
+            <input type="text" name="num2" id="num2" placeholder="Enter Number 2" required><br>
+
+            <label for="result">Result:</label>
+            <input type="text" name="result" id="result" placeholder="Result" readonly><br>
+
+            <input type="button" name="Add" value="Add" onclick="calculateData()">
+            <input type="button" name="Sub" value="Sub" onclick="calculateData()">
+            <input type="button" name="Mul" value="Mul" onclick="calculateData()">
+            <input type="button" name="Division" value="Division" onclick="calculateData()">
+            <input type="button" name="Modulus" value="Modulus" onclick="calculateData()">
+
+        </form>
+    </body>
+
+</html>
