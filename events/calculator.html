@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Simple Addition Calculator</title>
+        <title>Simple Calculator</title>
         <style>
             /* General Reset */
             * {
@@ -45,11 +45,20 @@
             /* Form Styling */
             form {
                 background-color: #ffffff;
-                padding: 20px;
+                padding: 25px;
                 border-radius: 10px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                width: 300px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                width: 350px;
                 text-align: center;
+            }
+
+            /* Label Styling */
+            label {
+                font-weight: bold;
+                display: block;
+                margin-top: 15px;
+                text-align: left;
+                color: #333;
             }
 
             /* Input Field Styling */
@@ -60,6 +69,7 @@
                 border: 1px solid #ccc;
                 border-radius: 5px;
                 font-size: 16px;
+                transition: border-color 0.3s ease;
             }
 
             input[type="text"]:focus {
@@ -77,37 +87,39 @@
                 background-color: #007bff;
                 color: white;
                 border: none;
-                padding: 10px 20px;
+                padding: 12px 20px;
                 border-radius: 5px;
                 font-size: 16px;
                 cursor: pointer;
                 transition: background-color 0.3s ease;
+                margin: 5px;
+                width: calc(50% - 10px);
+                /* Two buttons per row */
             }
 
             input[type="button"]:hover {
                 background-color: #0056b3;
             }
 
-            /* Label Styling */
-            label {
-                font-weight: bold;
-                display: block;
-                margin-top: 10px;
-                text-align: left;
-            }
-
             /* Responsive Design */
             @media (max-width: 400px) {
                 form {
                     width: 90%;
+                    padding: 20px;
+                }
+
+                input[type="button"] {
+                    width: 100%;
+                    /* Full width on small screens */
+                    margin: 5px 0;
                 }
             }
         </style>
 
         <script>
-            function calculateData() {
-                var value1 = parseInt(document.calculatorForm.num1.value);
-                var value2 = parseInt(document.calculatorForm.num2.value);
+            function calculateData(button) {
+                var value1 = parseFloat(document.calculatorForm.num1.value);
+                var value2 = parseFloat(document.calculatorForm.num2.value);
                 var resultInput = document.calculatorForm.result;
 
                 if (isNaN(value1) || isNaN(value2)) {
@@ -115,14 +127,32 @@
                     return;
                 }
 
-                resultInput.value = value1 + value2;
+                switch (button.value) {
+                    case "Add":
+                        resultInput.value = value1 + value2;
+                        break;
+                    case "Sub":
+                        resultInput.value = value1 - value2;
+                        break;
+                    case "Mul":
+                        resultInput.value = value1 * value2;
+                        break;
+                    case "Div":
+                        resultInput.value = value1 / value2;
+                        break;
+                    case "Mod":
+                        resultInput.value = value1 % value2;
+                        break;
+                    default:
+                        resultInput.value = "Invalid Operation";
+                }
             }
         </script>
     </head>
 
     <body>
         <!-- App Bar -->
-        <div class="app-bar">Calculator</div>
+        <div class="app-bar">Simple Calculator</div>
 
         <!-- Calculator Form -->
         <form name="calculatorForm">
@@ -135,12 +165,12 @@
             <label for="result">Result:</label>
             <input type="text" name="result" id="result" placeholder="Result" readonly><br>
 
-            <input type="button" name="Add" value="Add" onclick="calculateData()">
-            <input type="button" name="Sub" value="Sub" onclick="calculateData()">
-            <input type="button" name="Mul" value="Mul" onclick="calculateData()">
-            <input type="button" name="Division" value="Division" onclick="calculateData()">
-            <input type="button" name="Modulus" value="Modulus" onclick="calculateData()">
-
+            <!-- Operation Buttons -->
+            <input type="button" name="Add" value="Add" onclick="calculateData(this)">
+            <input type="button" name="Sub" value="Sub" onclick="calculateData(this)">
+            <input type="button" name="Mul" value="Mul" onclick="calculateData(this)">
+            <input type="button" name="Div" value="Div" onclick="calculateData(this)">
+            <input type="button" name="Mod" value="Mod" onclick="calculateData(this)">
         </form>
     </body>
 
