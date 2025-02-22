@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Clock in JavaScript</title>
+        <title>Digital Clock</title>
         <style>
             body {
                 display: flex;
@@ -12,32 +12,37 @@
                 align-items: center;
                 height: 100vh;
                 margin: 0;
-                background: linear-gradient(135deg, #1e3c72, #2a5298);
-                font-family: 'Arial', sans-serif;
-                color: white;
+                background: #000;
+                font-family: 'Orbitron', sans-serif;
             }
 
             #clock {
-                font-size: 5rem;
+                font-size: 6rem;
                 font-weight: bold;
-                background: rgba(0, 0, 0, 0.7);
-                padding: 20px 40px;
+                background: black;
+                padding: 20px 50px;
                 border-radius: 15px;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+                color: white;
                 text-align: center;
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             @media (max-width: 600px) {
                 #clock {
-                    font-size: 3rem;
+                    font-size: 4rem;
                     padding: 15px 30px;
                 }
             }
         </style>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <p id="clock">00:00:00</p>
+        <div id="clock">12:30</div>
         <script src="clock.js"></script>
     </body>
 
