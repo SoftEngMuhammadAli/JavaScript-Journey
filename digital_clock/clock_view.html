@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clock in JavaScript</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background: linear-gradient(135deg, #1e3c72, #2a5298);
+                font-family: 'Arial', sans-serif;
+                color: white;
+            }
+
+            #clock {
+                font-size: 5rem;
+                font-weight: bold;
+                background: rgba(0, 0, 0, 0.7);
+                padding: 20px 40px;
+                border-radius: 15px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                text-align: center;
+            }
+
+            @media (max-width: 600px) {
+                #clock {
+                    font-size: 3rem;
+                    padding: 15px 30px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <p id="clock">00:00:00</p>
+        <script src="clock.js"></script>
+    </body>
+
+</html>
