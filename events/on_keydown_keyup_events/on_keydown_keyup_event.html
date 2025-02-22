@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>On Key Down & Key Up Events</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+            }
+
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            .key-display {
+                font-size: 24px;
+                font-weight: bold;
+                color: #007BFF;
+                margin-top: 20px;
+            }
+
+            .instructions {
+                font-size: 16px;
+                color: #555;
+                margin-top: 10px;
+            }
+
+            .color-box {
+                width: 200px;
+                height: 200px;
+                margin-top: 20px;
+                border: 2px solid #ccc;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+                color: #fff;
+                background-color: #007BFF;
+                transition: background-color 0.3s ease;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Key Down & Key Up Events</h1>
+        <p class="instructions">Press any key to see the key code and change the box color.</p>
+        <div class="key-display" id="keyDisplay">Press a key</div>
+        <div class="color-box" id="colorBox">Color Box</div>
+
+        <script>
+            function handleKeyDown(event) {
+                const keyDisplay = document.getElementById("keyDisplay");
+                const colorBox = document.getElementById("colorBox");
+
+                keyDisplay.textContent = `Key Pressed: ${event.key} (Code: ${event.code})`;
+
+                const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+                colorBox.style.backgroundColor = randomColor;
+                colorBox.textContent = `Color: ${randomColor}`;
+            }
+
+            function handleKeyUp() {
+                const keyDisplay = document.getElementById("keyDisplay");
+                keyDisplay.textContent = "Press a key";
+            }
+
+            document.addEventListener("keydown", handleKeyDown);
+            document.addEventListener("keyup", handleKeyUp);
+        </script>
+    </body>
+
+</html>

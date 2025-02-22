@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom Errors Handling in JS</title>
+    </head>
+
+    <body>
+        <script>
+            class CustomError extends Error {
+                constructor(message) {
+                    super(message);
+                    this.name = "CustomError";
+                }
+            }
+
+            function riskyFunction() {
+                try {
+                    throw new CustomError("Something went wrong!");
+                } catch (error) {
+                    if (error instanceof CustomError) {
+                        document.error("Custom error caught: ", error.message);
+                    } else {
+                        document.error("An unexpected error occurred: ", error.message);
+                    }
+                } finally {
+                    document.write("Cleanup code can go here.");
+                }
+            }
+
+            riskyFunction();
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>On Change Event</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                transition: background-color 0.5s ease;
+            }
+
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            select {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                font-size: 16px;
+                background-color: #fff;
+                cursor: pointer;
+                transition: border-color 0.3s ease;
+            }
+
+            select:hover {
+                border-color: #666;
+            }
+
+            label {
+                font-size: 16px;
+                color: #555;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            #result {
+                font-size: 18px;
+                color: #333;
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #e0e0e0;
+                border-radius: 5px;
+                width: 100%;
+                text-align: center;
+                transition: background-color 0.3s ease;
+            }
+
+            #result:hover {
+                background-color: #d0d0d0;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Color & Country Selector</h1>
+
+            <select onchange="updateColor(this.value)">
+                <option value="">Select Color from below Options</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="pink">Pink</option>
+                <option value="purple">Purple</option>
+            </select>
+
+            <label for="country">Choose a country:</label>
+            <select id="country" onchange="showSelectedCountry()">
+                <option value="">--Select--</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Canada">Canada</option>
+            </select>
+
+            <p id="result"></p>
+        </div>
+
+        <script>
+            function updateColor(result) {
+                document.body.style.backgroundColor = result;
+            }
+
+            function showSelectedCountry() {
+                let selectedCountry = document.getElementById("country").value;
+                document.getElementById("result").textContent = "You selected: " + selectedCountry;
+            }
+        </script>
+    </body>
+
+</html>

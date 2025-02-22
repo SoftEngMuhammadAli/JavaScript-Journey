@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>On Focus & On Blue Event</title>
+    </head>
+
+    <body>
+        <input type="text" onfocus="handleOnFocus(this)" onblur="handleOnBlur(this)" placeholder="Enter your name">
+
+        <script>
+            handleOnFocus = (value) => {
+                value.style.backgroundColor = 'lightblue';
+                value.style.color = 'white';
+            }
+            handleOnBlur = (value) => {
+                value.style.backgroundColor = 'white';
+                value.style.color = 'black';
+            }
+        </script>
+    </body>
+
+</html>

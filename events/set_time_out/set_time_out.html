@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Set Time Out Event in JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Set Time Out Event in JavaScript</h1>
+
+        <p>Click the button below to go to the google page after 3 seconds.</p>
+
+        <button onclick="setTimeout(() => { 
+reDirectToGoogleWebsite()
+        }, 3000)">Click Me</button>
+
+
+        <script>
+            function reDirectToGoogleWebsite() {
+                window.open("https://www.google.com", "_blank");
+            }
+        </script>
+    </body>
+
+</html>

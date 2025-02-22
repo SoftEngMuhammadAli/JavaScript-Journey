@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Date</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 600px;
+                text-align: left;
+            }
+
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .output {
+                font-size: 16px;
+                color: #555;
+                margin: 10px 0;
+                padding: 10px;
+                background-color: #f9f9f9;
+                border-left: 4px solid #007BFF;
+                border-radius: 5px;
+            }
+
+            .output strong {
+                color: #007BFF;
+            }
+
+            .footer {
+                margin-top: 20px;
+                font-size: 14px;
+                color: #777;
+                text-align: center;
+            }
+
+            .button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: #fff;
+                background-color: #007BFF;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>JavaScript Date Methods</h1>
+            <div id="output"></div>
+            <button class="button" onclick="updateOutput()">Update Date</button>
+            <div class="footer">
+                <p>Explore JavaScript Date methods in action!</p>
+            </div>
+        </div>
+        <script>
+            const output = document.getElementById("output");
+
+            function updateOutput() {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = now.getMonth() + 1;
+                const day = now.getDate();
+                const hours = now.getHours();
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
+                const milliseconds = now.getMilliseconds();
+                const dayOfWeek = now.toLocaleString('en-US', { weekday: 'long' });
+                const timezoneOffset = now.getTimezoneOffset();
+                const isoString = now.toISOString();
+                const localeString = now.toLocaleString();
+
+                output.innerHTML = `
+                <div class="output"><strong>Current Date:</strong> ${now}</div>
+                <div class="output"><strong>Year:</strong> ${year}</div>
+                <div class="output"><strong>Month:</strong> ${month}</div>
+                <div class="output"><strong>Day:</strong> ${day}</div>
+                <div class="output"><strong>Hours:</strong> ${hours}</div>
+                <div class="output"><strong>Minutes:</strong> ${minutes}</div>
+                <div class="output"><strong>Seconds:</strong> ${seconds}</div>
+                <div class="output"><strong>Milliseconds:</strong> ${milliseconds}</div>
+                <div class="output"><strong>Day of Week:</strong> ${dayOfWeek}</div>
+                <div class="output"><strong>Timezone Offset (minutes):</strong> ${timezoneOffset}</div>
+                <div class="output"><strong>ISO String:</strong> ${isoString}</div>
+                <div class="output"><strong>Locale String:</strong> ${localeString}</div>
+            `;
+            }
+
+            updateOutput();
+        </script>
+    </body>
+
+</html>
