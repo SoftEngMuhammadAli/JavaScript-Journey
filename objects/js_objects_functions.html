@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Objects Using Functions</title>
+    </head>
+
+    <body>
+        <script>
+            function blogPost(title, text) {
+                this.title = title;
+                this.text = text;
+            }
+
+            var bp1 = new blogPost("js", "flutter");
+
+            document.write(bp1.title);
+            document.write(bp1.text);
+
+            var bp2 = new blogPost("asdhkjasdh", "kajsdh");
+
+            document.write(bp2.title);
+            document.write(bp2.text);
+
+        </script>
+    </body>
+
+</html>

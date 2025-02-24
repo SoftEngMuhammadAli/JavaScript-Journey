@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>JavaScript Object Constructor Literal</title>
+    </head>
+
+    <body>
+        <script>
+            // Object constructor
+            function Person(firstName, lastName, age, eyeColor) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+                this.eyeColor = eyeColor;
+            }
+
+            // Creating a new object
+            const myFather = new Person("John", "Doe", 50, "blue");
+            const myMother = new Person("Jane", "Doe", 48, "green");
+
+            // Displaying the properties
+            document.write("My father is " + myFather.firstName + " " + myFather.lastName + ".<br>");
+            document.write("He is " + myFather.age + " years old and has " + myFather.eyeColor + " eyes.<br>");
+            document.write("My mother is " + myMother.firstName + " " + myMother.lastName + ".<br>");
+            document.write("She is " + myMother.age + " years old and has " + myMother.eyeColor + " eyes.");
+        </script>
+    </body>
+
+</html>
