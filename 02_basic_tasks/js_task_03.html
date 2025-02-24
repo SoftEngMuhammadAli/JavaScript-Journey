@@ -53,7 +53,28 @@
         </form>
 
         <script>
-            document.getElementById("myForm").addEventListener("submit", function (event) { });
+            document.getElementById("myForm").addEventListener("submit", function (event) {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+
+
+                if (name == "") {
+                    alert('name could not be empty');
+                    return false;
+                } else if (email == "") {
+                    alert('email could not be empty');
+                    return false;
+                }
+                else if (password == "") {
+                    alert('password could not be empty');
+                    return false;
+                }
+                else {
+                    alert("success!");
+                    return true;
+                }
+            });
         </script>
 
     </body>

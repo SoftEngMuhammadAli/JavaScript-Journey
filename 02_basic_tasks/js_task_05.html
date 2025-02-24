@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Countdown Timer</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Countdown Timer</h1>
+            <div id="display">10</div>
+            <button id="startBtn">Start Countdown</button>
+        </div>
+        <script>
+            document.getElementById('startBtn').addEventListener('click', () => {
+                let count = 10;
+                const display = document.getElementById('display');
+                const button = document.getElementById('startBtn');
+
+                button.disabled = true;
+
+                const countdown = setInterval(() => {
+                    display.textContent = count;
+                    count--;
+
+                    if (count < 0) {
+                        clearInterval(countdown);
+                        display.textContent = "Done!";
+                        button.disabled = false;
+                    }
+                }, 1000);
+            });
+        </script>
+    </body>
+
+</html>
