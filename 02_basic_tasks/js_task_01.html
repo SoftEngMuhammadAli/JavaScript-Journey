@@ -1,0 +1,112 @@
+<!-- 1. *Dynamic Text Update*: Create an HTML page featuring a button. When clicked, modify the text content of a paragraph
+element. ✅ -->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Interactive Web Page: Dynamic Text Update with JavaScript</title>
+        <style>
+            /* General Styles */
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                margin: 0;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            h1 {
+                color: #444;
+                margin-bottom: 20px;
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            p {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                max-width: 600px;
+                line-height: 1.6;
+                font-size: 1.1rem;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            /* Button Styles */
+            button {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1rem;
+                margin: 10px;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+                transform: scale(1.05);
+            }
+
+            button:active {
+                transform: scale(0.95);
+            }
+
+            /* Specific Styles for Updated and Reset Text */
+            #pid.updated {
+                background-color: #ff6b6b;
+                color: white;
+            }
+
+            #pid.reset {
+                background-color: #ffcccb;
+                color: black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Dynamic Text Update in HTML / JavaScript</h1>
+
+        <!-- Paragraph element to update -->
+        <p id="pid">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <!-- Buttons to trigger text updates -->
+        <button onclick="updateText()">Click me to update text</button>
+        <button onclick="resetText()">Click me to reset text</button>
+
+        <script>
+            // Function to update the text and styles
+            function updateText() {
+                const paragraph = document.getElementById('pid');
+                paragraph.textContent = "Hi, this is the updated text!";
+                paragraph.className = "updated"; // Add class for updated styles
+            }
+
+            // Function to reset the text and styles
+            function resetText() {
+                const paragraph = document.getElementById('pid');
+                paragraph.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+                paragraph.className = "reset"; // Add class for reset styles
+            }
+        </script>
+    </body>
+
+</html>
