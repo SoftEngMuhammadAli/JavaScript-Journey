@@ -4,125 +4,103 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JavaScript Journey</title>
+        <title>Simple To-Do App</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
                 display: flex;
-                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
                 background-color: #f4f4f4;
                 margin: 0;
             }
 
-            .sidebar {
-                width: 60px;
-                background-color: #333;
-                color: white;
-                height: 100vh;
-                transition: width 0.3s;
-                overflow: hidden;
-                position: fixed;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding-top: 20px;
-            }
-
-            .sidebar.expanded {
-                width: 200px;
-            }
-
-            .sidebar:hover {
-                width: 200px;
-            }
-
-            .sidebar div {
-                padding: 15px;
-                cursor: pointer;
-                text-align: center;
-                transition: background 0.3s;
-            }
-
-            .sidebar div:hover {
-                background-color: #555;
-            }
-
-            .main-content {
-                margin-left: 60px;
-                padding: 20px;
-                width: calc(100% - 60px);
-                transition: margin-left 0.3s;
-            }
-
-            .header {
-                width: 100%;
-                background-color: #333;
-                color: white;
-                padding: 20px;
-                text-align: center;
-                font-size: 24px;
-            }
-
-            .container {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 20px;
-                max-width: 1000px;
-                padding: 20px;
-                margin-top: 20px;
-            }
-
-            .topic-box {
+            .todo-container {
                 background-color: white;
-                padding: 30px;
-                text-align: center;
+                padding: 20px;
                 border-radius: 10px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                cursor: pointer;
-                transition: transform 0.2s, background-color 0.3s;
-                font-size: 18px;
+                width: 300px;
             }
 
-            .topic-box:hover {
-                background-color: #ddd;
-                transform: scale(1.05);
+            .todo-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .todo-input {
+                width: calc(100% - 22px);
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .todo-button {
+                width: 100%;
+                padding: 10px;
+                background-color: #333;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .todo-list {
+                list-style: none;
+                padding: 0;
+            }
+
+            .todo-item {
+                background-color: #f9f9f9;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .todo-item button {
+                background-color: #e74c3c;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                padding: 5px 10px;
             }
         </style>
     </head>
 
     <body>
-        <div class="sidebar" id="sidebar">
-            <div onclick="toggleSidebar()">☰</div>
-            <div onclick="openFolder('loops')">🔁</div>
-            <div onclick="openFolder('functions')">🔧</div>
-            <div onclick="openFolder('objects')">📦</div>
-            <div onclick="openFolder('arrays')">📊</div>
-        </div>
-        <div class="main-content" id="main-content">
-            <div class="header">JavaScript Journey</div>
-            <div class="container" id="topics">
-                <div class="topic-box" onclick="openFolder('loops')">Loops</div>
-                <div class="topic-box" onclick="openFolder('functions')">Functions</div>
-                <div class="topic-box" onclick="openFolder('objects')">Objects</div>
-                <div class="topic-box" onclick="openFolder('arrays')">Arrays</div>
-            </div>
+        <div class="todo-container">
+            <h2>To-Do List</h2>
+            <input type="text" class="todo-input" id="todo-input" placeholder="Add a new task">
+            <button class="todo-button" onclick="addTodo()">Add</button>
+            <ul class="todo-list" id="todo-list"></ul>
         </div>
 
         <script>
-            function openFolder(folderName) {
-                alert(`Opening ${folderName} folder...`);
+            function addTodo() {
+                const input = document.getElementById('todo-input');
+                const todoText = input.value.trim();
+                if (todoText === '') return;
+
+                const todoList = document.getElementById('todo-list');
+                const todoItem = document.createElement('li');
+                todoItem.className = 'todo-item';
+                todoItem.innerHTML = `
+                ${todoText}
+                <button onclick="removeTodo(this)">Delete</button>
+            `;
+                todoList.appendChild(todoItem);
+                input.value = '';
             }
 
-            function toggleSidebar() {
-                const sidebar = document.getElementById('sidebar');
-                const mainContent = document.getElementById('main-content');
-                if (sidebar.classList.contains('expanded')) {
-                    sidebar.classList.remove('expanded');
-                    mainContent.style.marginLeft = '60px';
-                } else {
-                    sidebar.classList.add('expanded');
-                    mainContent.style.marginLeft = '200px';
-                }
+            function removeTodo(button) {
+                const todoItem = button.parentElement;
+                todoItem.remove();
             }
         </script>
     </body>
