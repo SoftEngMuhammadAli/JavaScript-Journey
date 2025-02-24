@@ -1,4 +1,4 @@
-Task 1:
+kiTask 1:
 
 Create an HTML page with a button. When the button is clicked, change the text of the paragraph element.
 
@@ -29,3 +29,9 @@ Display a progress bar that updates in real-time, such as during a file download
 Task 8:
 
 Create a search bar that displays instant search results without requiring a full page reload.
+
+---------------------------------------------
+This link also having 21 javascript projects for beginner, also do this for practice:
+
+link: https://skillcrush.com/blog/projects-you-can-do-with-javascript/
+---------------------------------------------
