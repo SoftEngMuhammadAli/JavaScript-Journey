@@ -1,0 +1,99 @@
+**JSON - Introduction**
+
+**HTML**
+**JSON**
+
+- JSON stands for JavaScript Object Notation.
+- JSON is a text format for storing and transporting data.
+- JSON is "self-describing" and easy to understand.
+
+**JSON Example**
+This example is a JSON string:
+```json
+'{"name":"John", "age":30, "car":null}'
+```
+It defines an object with 3 properties:
+- `name`
+- `age`
+- `car`
+
+Each property has a value. If you parse the JSON string with a JavaScript program, you can access the data as an object:
+```javascript
+let personName = obj.name;
+let personAge = obj.age;
+```
+
+**What is JSON?**
+- JSON stands for JavaScript Object Notation.
+- JSON is a lightweight data-interchange format.
+- JSON is plain text written in JavaScript object notation.
+- JSON is used to send data between computers.
+- JSON is language independent.
+
+**Why Use JSON?**
+- JSON is syntactically similar to JavaScript object notation.
+- A JavaScript program can easily convert JSON data into JavaScript objects.
+- JSON data can be sent between computers and used by any programming language.
+
+**JavaScript Built-in Functions for JSON**
+- Convert JSON strings into JavaScript objects:
+  ```javascript
+  JSON.parse()
+  ```
+- Convert JavaScript objects into JSON strings:
+  ```javascript
+  JSON.stringify()
+  ```
+
+**JSON Syntax Rules**
+- Data is in name/value pairs.
+- Data is separated by commas.
+- Curly braces `{}` hold objects.
+- Square brackets `[]` hold arrays.
+
+**JSON Data Types**
+- Valid data types in JSON:
+  - String
+  - Number
+  - Object
+  - Array
+  - Boolean
+  - `null`
+- Invalid data types in JSON:
+  - Function
+  - Date
+  - `undefined`
+
+**JSON Example**
+```json
+{
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}
+```
+
+**JSON.parse()**
+- Used to convert JSON text into a JavaScript object.
+- Example:
+  ```javascript
+  const obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
+  ```
+
+**JSON.stringify()**
+- Used to convert a JavaScript object into a JSON string.
+- Example:
+  ```javascript
+  const jsonString = JSON.stringify({name: "John", age: 30, city: "New York"});
+  ```
+
+**JSON Files**
+- File type: `.json`
+- MIME type: `application/json`
+
+**Exceptions**
+- Dates and functions are not allowed in JSON.
+- Dates can be written as strings and converted back to date objects.
+- Functions can be written as strings and converted back using `eval()` (not recommended).
+
+---
