@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Project Assignments</title>
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Project Assignments</h1>
+
+    <!-- Dynamic Text Update -->
+    <section>
+        <h2>Dynamic Text Update</h2>
+        <p id="dynamic-text">Original text</p>
+        <button onclick="updateText()">Click me to change text</button>
+    </section>
+
+    <!-- Image Swapping -->
+    <section>
+        <h2>Image Swapping</h2>
+        <img id="image1" src="image1.jpg" alt="Image 1" width="100">
+        <img id="image2" src="image2.jpg" alt="Image 2" width="100">
+        <button onclick="swapImages()">Swap Images</button>
+    </section>
+
+    <!-- Form Validation -->
+    <section>
+        <h2>Form Validation</h2>
+        <form onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+            <button type="submit">Submit</button>
+            <p id="error-message" style="color: red;"></p>
+        </form>
+    </section>
+
+    <!-- Dynamic List Management -->
+    <section>
+        <h2>Dynamic List Management</h2>
+        <ul id="dynamic-list"></ul>
+        <input type="text" id="list-item" placeholder="New list item">
+        <button onclick="addListItem()">Add Item</button>
+        <button onclick="removeListItem()">Remove Item</button>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section>
+        <h2>Countdown Timer</h2>
+        <p id="countdown-timer">10</p>
+        <button onclick="startCountdown()">Start Countdown</button>
+    </section>
+
+    <!-- Tabbed Interface -->
+    <section>
+        <h2>Tabbed Interface</h2>
+        <button onclick="showTab('tab1')">Tab 1</button>
+        <button onclick="showTab('tab2')">Tab 2</button>
+        <div id="tab1" class="tab-content active">
+            <p>Content for Tab 1</p>
+        </div>
+        <div id="tab2" class="tab-content">
+            <p>Content for Tab 2</p>
+        </div>
+    </section>
+
+    <!-- Real-time Progress Bar -->
+    <section>
+        <h2>Real-time Progress Bar</h2>
+        <div style="border: 1px solid #000; width: 100%; height: 30px;">
+            <div id="progress-bar" style="width: 0; height: 100%; background: green;"></div>
+        </div>
+        <button onclick="startProgress()">Start Progress</button>
+    </section>
+
+    <!-- Instant Search Results -->
+    <section>
+        <h2>Instant Search Results</h2>
+        <input type="text" id="search-bar" onkeyup="showResults(this.value)" placeholder="Search...">
+        <ul id="search-results"></ul>
+    </section>
+
+    <script>
+        // Dynamic Text Update
+        function updateText() {
+            document.getElementById('dynamic-text').textContent = 'Text has been changed!';
+        }
+
+        // Image Swapping
+        function swapImages() {
+            const img1 = document.getElementById('image1');
+            const img2 = document.getElementById('image2');
+            const tempSrc = img1.src;
+            img1.src = img2.src;
+            img2.src = tempSrc;
+        }
+
+        // Form Validation
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (!name || !email) {
+                errorMessage.textContent = 'All fields are required!';
+                return false;
+            }
+            errorMessage.textContent = '';
+            return true;
+        }
+
+        // Dynamic List Management
+        function addListItem() {
+            const listItem = document.getElementById('list-item').value;
+            if (listItem) {
+                const li = document.createElement('li');
+                li.textContent = listItem;
+                document.getElementById('dynamic-list').appendChild(li);
+            }
+        }
+
+        function removeListItem() {
+            const list = document.getElementById('dynamic-list');
+            if (list.lastChild) {
+                list.removeChild(list.lastChild);
+            }
+        }
+
+        // Countdown Timer
+        let countdown;
+        function startCountdown() {
+            let timer = 10;
+            document.getElementById('countdown-timer').textContent = timer;
+            countdown = setInterval(() => {
+                timer--;
+                document.getElementById('countdown-timer').textContent = timer;
+                if (timer <= 0) {
+                    clearInterval(countdown);
+                }
+            }, 1000);
+        }
+
+        // Tabbed Interface
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Real-time Progress Bar
+        let progress;
+        function startProgress() {
+            let width = 0;
+            progress = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(progress);
+                } else {
+                    width++;
+                    document.getElementById('progress-bar').style.width = width + '%';
+                }
+            }, 100);
+        }
+
+        // Instant Search Results
+        const items = ['Apple', 'Banana', 'Orange', 'Mango', 'Pineapple', 'Grapes'];
+        function showResults(query) {
+            const results = document.getElementById('search-results');
+            results.innerHTML = '';
+            if (query) {
+                const filteredItems = items.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+                filteredItems.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    results.appendChild(li);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
