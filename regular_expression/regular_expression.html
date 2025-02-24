@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learn Regular Expressions</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                padding: 20px;
+                line-height: 1.6;
+            }
+
+            h1 {
+                color: #333;
+            }
+
+            .example {
+                background-color: #fff;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+
+            .example h2 {
+                color: #007bff;
+                margin-top: 0;
+            }
+
+            .example p {
+                margin: 10px 0;
+            }
+
+            .example input {
+                padding: 8px;
+                width: 100%;
+                max-width: 300px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 1rem;
+            }
+
+            .example button {
+                padding: 8px 16px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+
+            .example button:hover {
+                background-color: #0056b3;
+            }
+
+            .result {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+
+            .valid {
+                color: green;
+            }
+
+            .invalid {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Learn Regular Expressions (Regex)</h1>
+
+        <!-- Example 1: Matching a Simple Word -->
+        <div class="example">
+            <h2>1. Matching a Simple Word</h2>
+            <p><strong>Regex:</strong> <code>/hello/</code></p>
+            <p>This regex matches the exact word "hello".</p>
+            <input type="text" id="input1" placeholder="Enter 'hello'">
+            <button onclick="testRegex(1, /hello/)">Test Regex</button>
+            <div class="result" id="result1"></div>
+        </div>
+
+        <!-- Example 2: Matching Digits -->
+        <div class="example">
+            <h2>2. Matching Digits</h2>
+            <p><strong>Regex:</strong> <code>/\d+/</code></p>
+            <p>This regex matches one or more digits (0-9).</p>
+            <input type="text" id="input2" placeholder="Enter digits (e.g., 123)">
+            <button onclick="testRegex(2, /\d+/)">Test Regex</button>
+            <div class="result" id="result2"></div>
+        </div>
+
+        <!-- Example 3: Matching Email Address -->
+        <div class="example">
+            <h2>3. Matching an Email Address</h2>
+            <p><strong>Regex:</strong> <code>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</code></p>
+            <p>This regex matches a basic email format (e.g., user@example.com).</p>
+            <input type="text" id="input3" placeholder="Enter an email">
+            <button onclick="testRegex(3, /^[^\s@]+@[^\s@]+\.[^\s@]+$/)">Test Regex</button>
+            <div class="result" id="result3"></div>
+        </div>
+
+        <!-- Example 4: Matching a URL -->
+        <div class="example">
+            <h2>4. Matching a URL</h2>
+            <p><strong>Regex:</strong> <code>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</code></p>
+            <p>This regex matches a basic URL format (e.g., https://example.com).</p>
+            <input type="text" id="input4" placeholder="Enter a URL">
+            <button onclick="testRegex(4, /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/)">Test
+                Regex</button>
+            <div class="result" id="result4"></div>
+        </div>
+
+        <!-- Example 5: Matching a Phone Number -->
+        <div class="example">
+            <h2>5. Matching a Phone Number</h2>
+            <p><strong>Regex:</strong> <code>/^\d{10}$/</code></p>
+            <p>This regex matches a 10-digit phone number (e.g., 1234567890).</p>
+            <input type="text" id="input5" placeholder="Enter a 10-digit number">
+            <button onclick="testRegex(5, /^\d{10}$/)">Test Regex</button>
+            <div class="result" id="result5"></div>
+        </div>
+
+        <script>
+            // Function to test regex
+            function testRegex(exampleNumber, regex) {
+                const input = document.getElementById(`input${exampleNumber}`).value;
+                const resultDiv = document.getElementById(`result${exampleNumber}`);
+                if (regex.test(input)) {
+                    resultDiv.textContent = "Valid!";
+                    resultDiv.className = "result valid";
+                } else {
+                    resultDiv.textContent = "Invalid!";
+                    resultDiv.className = "result invalid";
+                }
+            }
+        </script>
+    </body>
+
+</html>

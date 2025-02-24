@@ -72,8 +72,26 @@
         <button onclick="swapImage()">Swap Images</button>
 
         <script>
-            function swapImage() { }
+            function swapImage() {
+                const image1 = document.getElementById('image-1');
+                const image2 = document.getElementById('image-2');
+
+                const temporarySource = image1.src;
+                image1.src = image2.src;
+                image2.src = temporarySource;
+            }
         </script>
     </body>
 
 </html>
+
+<!--  
+            function swapImage() {
+                const image1 = document.getElementById('image-1');
+                const image2 = document.getElementById('image-2');
+
+                const temporarySource = image1.src;
+                image1.src = image2.src;
+                image2.src = temporarySource;
+            }
+ -->

@@ -4,7 +4,7 @@ Complete the following tasks to demonstrate your proficiency in JavaScript:
 
 1. *Dynamic Text Update*: Create an HTML page featuring a button. When clicked, modify the text content of a paragraph element. ✅
 
-2. *Image Swapping*: Design a page with two images and a button. Upon clicking the button, swap the source attributes of the images.
+2. *Image Swapping*: Design a page with two images and a button. Upon clicking the button, swap the source attributes of the images. ✅
 
 3. *Form Validation*: Develop a form with input fields and a submit button. Utilize JavaScript to validate user input and display error messages for invalid data.
 

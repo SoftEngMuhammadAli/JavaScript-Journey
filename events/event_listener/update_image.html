@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Update Image using addEventListener</title>
+    </head>
+
+    <body>
+
+        <h1>Update Image using addEventListener</h1>
+
+        <img src="/images/image(1).jpg" id="image" alt="Placeholder Image" width="150px">
+        <br>
+        <button id="btn">Update Image</button>
+
+        <script>
+            function updateImage() {
+                document.getElementById("btn").addEventListener('click', function () {
+                    document.getElementById("image").src = "/images/image(2).jpg";
+                    document.getElementById("image").style.rotate = "100deg";
+                });
+            }
+            window.addEventListener('load', updateImage);
+        </script>
+    </body>
+
+</html>

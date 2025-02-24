@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Display Date Using DOM: Event Listener</title>
+        <style>
+            /* General Body Styling */
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            /* Heading Styling */
+            h1 {
+                color: #007bff;
+                margin-bottom: 20px;
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            /* Button Styling */
+            #btn {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 5px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+
+            #btn:hover {
+                background-color: #0056b3;
+                transform: scale(1.05);
+            }
+
+            #btn:active {
+                transform: scale(0.95);
+            }
+
+            /* Paragraph Styling */
+            #para {
+                margin-top: 20px;
+                font-size: 1.2rem;
+                color: #555;
+                background-color: #fff;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: 80%;
+                max-width: 400px;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Date Display Example</h1>
+        <button id="showButton">Show Date</button>
+        <button id="resetButton">Reset Date</button>
+        <p id="para">This is a Demo Paragraph</p>
+
+        <script>
+            document.getElementById('showButton').addEventListener('click', function () {
+                document.getElementById('para').innerHTML = new Date();
+            });
+
+            document.getElementById('resetButton').addEventListener('click', function () {
+                document.getElementById('para').innerHTML = 'This is Reset Text';
+            });
+        </script>
+    </body>
+
+</html>

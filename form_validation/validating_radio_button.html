@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Radio Button Validation</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .form-container {
+                background-color: #ffffff;
+                padding: 2rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 400px;
+            }
+
+            h3 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+            }
+
+            .radio-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .radio-group label {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: #555;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+
+            .radio-group input[type="radio"] {
+                width: 1.25rem;
+                height: 1.25rem;
+                accent-color: #007bff;
+                cursor: pointer;
+            }
+
+            .radio-group input[type="radio"]:hover {
+                opacity: 0.8;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: 0.75rem;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="form-container">
+            <h3>Radio Button Validation</h3>
+            <form name="myform" action="registration.jsp" onsubmit="return validate()">
+                <div class="radio-group">
+                    <label for="html">
+                        <input type="radio" id="html" name="language" value="html"> HTML
+                    </label>
+                    <label for="css">
+                        <input type="radio" id="css" name="language" value="css"> CSS
+                    </label>
+                    <label for="javascript">
+                        <input type="radio" id="javascript" name="language" value="javascript"> JavaScript
+                    </label>
+                    <label for="python">
+                        <input type="radio" id="python" name="language" value="python"> Python
+                    </label>
+                    <label for="java">
+                        <input type="radio" id="java" name="language" value="java"> Java
+                    </label>
+                    <label for="csharp">
+                        <input type="radio" id="csharp" name="language" value="csharp"> C#
+                    </label>
+                    <label for="ruby">
+                        <input type="radio" id="ruby" name="language" value="ruby"> Ruby
+                    </label>
+                    <label for="php">
+                        <input type="radio" id="php" name="language" value="php"> PHP
+                    </label>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- Script -->
+        <script>
+            function validate() {
+                let valid = false;
+                const radios = document.querySelectorAll('input[type="radio"]');
+
+                // Check if at least one radio button is selected
+                radios.forEach(radio => {
+                    if (radio.checked) {
+                        valid = true;
+                    }
+                });
+
+                if (valid) {
+                    alert("Success");
+                    return true;
+                } else {
+                    alert('Please select at least one option');
+                    return false;
+                }
+            }
+        </script>
+    </body>
+
+</html>
