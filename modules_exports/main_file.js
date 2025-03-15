@@ -1,12 +1,7 @@
-// Define the functions
-const print = (data) => {
-    console.log(data);
-};
+const data = require('./data_file');
 
-const opt = (data) => {
-    console.log(data);
-    console.log(data);
-};
+// you can also use this way below to import data
+// import { dummyUsers, dummyProducts } from './data_file';
 
-// Export the functions
-export { print, opt };
+console.log(data.dummyUsers);
+console.log(data.dummyProducts);
