@@ -1,82 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Form Validation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+      }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Simple Form Validation</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 50px;
-            }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
 
-            .error {
-                color: red;
-                font-size: 14px;
-            }
+      input {
+        display: block;
+        margin-bottom: 10px;
+        padding: 8px;
+        width: 250px;
+      }
 
-            input {
-                display: block;
-                margin-bottom: 10px;
-                padding: 8px;
-                width: 250px;
-            }
+      button {
+        padding: 10px 15px;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
 
-            button {
-                padding: 10px 15px;
-                background-color: blue;
-                color: white;
-                border: none;
-                cursor: pointer;
-            }
-        </style>
-    </head>
+  <body>
+    <h2>Sign Up Form</h2>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" />
+      <span class="error" id="nameError"></span>
 
-    <body>
+      <label for="email">Email:</label>
+      <input type="text" id="email" />
+      <span class="error" id="emailError"></span>
 
-        <h2>Sign Up Form</h2>
-        <form id="myForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name">
-            <span class="error" id="nameError"></span>
+      <label for="password">Password:</label>
+      <input type="password" id="password" />
+      <span class="error" id="passwordError"></span>
 
-            <label for="email">Email:</label>
-            <input type="text" id="email">
-            <span class="error" id="emailError"></span>
+      <button type="submit">Submit</button>
+    </form>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password">
-            <span class="error" id="passwordError"></span>
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
 
-            <button type="submit">Submit</button>
-        </form>
-
-        <script>
-            document.getElementById("myForm").addEventListener("submit", function (event) {
-                var name = document.getElementById("name").value;
-                var email = document.getElementById("email").value;
-                var password = document.getElementById("password").value;
-
-
-                if (name == "") {
-                    alert('name could not be empty');
-                    return false;
-                } else if (email == "") {
-                    alert('email could not be empty');
-                    return false;
-                }
-                else if (password == "") {
-                    alert('password could not be empty');
-                    return false;
-                }
-                else {
-                    alert("success!");
-                    return true;
-                }
-            });
-        </script>
-
-    </body>
-
+          if (name == "") {
+            alert("name could not be empty");
+            return false;
+          } else if (email == "") {
+            alert("email could not be empty");
+            return false;
+          } else if (password == "") {
+            alert("password could not be empty");
+            return false;
+          } else {
+            alert("success!");
+            return true;
+          }
+        });
+    </script>
+  </body>
 </html>

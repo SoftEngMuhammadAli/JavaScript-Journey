@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation of RegEx</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            Validation of RegEx
-        </title>
-    </head>
+  <body>
+    <form name="myform" action="registration.jsp" onsubmit="return validate()">
+      Address: <textarea name="address"></textarea> <b id="err"></b><br />
+      <input type="submit" value="submit" />
+    </form>
 
-    <body>
-        <form name="myform" action="registration.jsp" onsubmit="return validate()">
-            Address: <textarea name="address"></textarea>
-            <b id="err"></b><br>
-            <input type="submit" value="submit">
-        </form>
+    <script>
+      function validate() {
+        let valid = false;
+        var exp = "/^[A-Za-z0-9\s]+$/";
+        var address = document.myform.address.value;
+        var result = exp.test(address);
 
-        <script>
-            function validate() {
-                let valid = false;
-                var exp = "/^[A-Za-z0-9\s]+$/";
-                var address = document.myform.address.value;
-                var result = exp.test(address);
-
-                if (result) {
-                    alert('success');
-                    return valid = true;
-                } else {
-                    document.getElementById('err').innerHTML = "Please enter alpha numeric value";
-                    return valid = false;
-                }
-            }
-        </script>
-    </body>
-
+        if (result) {
+          alert("success");
+          return (valid = true);
+        } else {
+          document.getElementById("err").innerHTML =
+            "Please enter alpha numeric value";
+          return (valid = false);
+        }
+      }
+    </script>
+  </body>
 </html>

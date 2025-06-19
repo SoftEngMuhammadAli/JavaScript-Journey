@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM: Event & Event Listener</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+      }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DOM: Event & Event Listener</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                margin: 0;
-                background-color: #f4f4f9;
-            }
+      p {
+        font-size: 20px;
+        color: #333;
+      }
 
-            p {
-                font-size: 20px;
-                color: #333;
-            }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
 
-            button {
-                padding: 10px 20px;
-                font-size: 16px;
-                cursor: pointer;
-                background-color: #007BFF;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                margin-top: 20px;
-            }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
 
-            button:hover {
-                background-color: #0056b3;
-            }
-        </style>
-    </head>
+  <body>
+    <p id="message">Click the button to change this text.</p>
+    <button id="clickButton">Click Me</button>
 
-    <body>
-        <p id="message">Click the button to change this text.</p>
-        <button id="clickButton">Click Me</button>
+    <script>
+      const message = document.getElementById("message");
+      const buttonValue = document.getElementById("clickButton");
 
-        <script>
-            const message = document.getElementById("message");
-            const buttonValue = document.getElementById("clickButton");
-
-            buttonValue.addEventListener("click", function () {
-                message.textContent = "Text changed! You clicked the button.";
-                message.style.color = "green";
-            });
-        </script>
-    </body>
-
+      buttonValue.addEventListener("click", function () {
+        message.textContent = "Text changed! You clicked the button.";
+        message.style.color = "green";
+      });
+    </script>
+  </body>
 </html>

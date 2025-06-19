@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using user defined functions to handle events</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Using user defined functions to handle events</title>
+    <script>
+      function handleMouseOverEvent(value) {
+        value.style.backgroundColor = "blue";
+        value.style.color = "white";
 
-        <script>
-            function handleMouseOverEvent(value) {
-                value.style.backgroundColor = "blue";
-                value.style.color = "white";
+        value.innerHTML = "Mouse Over Event";
+      }
 
-                value.innerHTML = "Mouse Over Event";
-            }
+      function handleMouseOutEvent(value) {
+        value.style.backgroundColor = "black";
+        value.style.color = "red";
 
-            function handleMouseOutEvent(value) {
-                value.style.backgroundColor = "black";
-                value.style.color = "red";
+        value.innerHTML = "Mouse Out Event";
+      }
+    </script>
+  </head>
 
-                value.innerHTML = "Mouse Out Event";
-            }
-        </script>
-    </head>
+  <body>
+    <h1>The example of custom mouse_over_out_event</h1>
 
-    <body>
-        <h1>The example of custom mouse_over_out_event</h1>
-
-        <p onmouseover="handleMouseOverEvent(this)" onmouseout="handleMouseOutEvent(this)">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit
-        </p>
-    </body>
-
+    <p
+      onmouseover="handleMouseOverEvent(this)"
+      onmouseout="handleMouseOutEvent(this)"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit
+    </p>
+  </body>
 </html>

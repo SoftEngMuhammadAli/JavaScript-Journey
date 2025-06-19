@@ -2,10 +2,10 @@
 var globalVariable = "I am a global variable";
 
 function exampleFunction() {
-    // Local variable
-    var localVariable = "I am a local variable";
+  // Local variable
+  var localVariable = "I am a local variable";
 
-    console.log(localVariable); // Output: I am a local variable
+  console.log(localVariable); // Output: I am a local variable
 }
 
 exampleFunction();

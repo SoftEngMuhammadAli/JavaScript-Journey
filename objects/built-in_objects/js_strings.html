@@ -1,104 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Strings</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JavaScript Strings</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
 
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-            }
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+      }
 
-            .container {
-                background-color: #fff;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                width: 100%;
-                max-width: 600px;
-                text-align: left;
-            }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-            h1 {
-                color: #333;
-                margin-bottom: 20px;
-                text-align: center;
-            }
+      .output {
+        font-size: 16px;
+        color: #555;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-left: 4px solid #007bff;
+        border-radius: 5px;
+      }
 
-            .output {
-                font-size: 16px;
-                color: #555;
-                margin: 10px 0;
-                padding: 10px;
-                background-color: #f9f9f9;
-                border-left: 4px solid #007BFF;
-                border-radius: 5px;
-            }
+      .output strong {
+        color: #007bff;
+      }
 
-            .output strong {
-                color: #007BFF;
-            }
+      .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777;
+        text-align: center;
+      }
+    </style>
+  </head>
 
-            .footer {
-                margin-top: 20px;
-                font-size: 14px;
-                color: #777;
-                text-align: center;
-            }
-        </style>
-    </head>
+  <body>
+    <div class="container">
+      <h1>JavaScript String Methods</h1>
 
-    <body>
-        <div class="container">
-            <h1>JavaScript String Methods</h1>
+      <div id="output">
+        <!-- Output will be dynamically inserted here -->
+      </div>
 
-            <div id="output">
-                <!-- Output will be dynamically inserted here -->
-            </div>
+      <div class="footer">
+        <p>Explore JavaScript string methods in action!</p>
+      </div>
+    </div>
 
-            <div class="footer">
-                <p>Explore JavaScript string methods in action!</p>
-            </div>
-        </div>
+    <script>
+      const name = "John Doe";
+      const output = document.getElementById("output");
 
-        <script>
-            const name = 'John Doe';
-            const output = document.getElementById("output");
+      const operations = [
+        { label: "Original String", value: name },
+        { label: "Length", value: name.length },
+        { label: "Uppercase", value: name.toUpperCase() },
+        { label: "Lowercase", value: name.toLowerCase() },
+        { label: "Character at index 2", value: name.charAt(2) },
+        { label: "Index of 'Doe'", value: name.indexOf("Doe") },
+        { label: "Substring (0, 4)", value: name.substring(0, 4) },
+        { label: "Slice (0, 4)", value: name.slice(0, 4) },
+        {
+          label: "Replace 'John' with 'Jane'",
+          value: name.replace("John", "Jane"),
+        },
+        { label: "Includes 'John'", value: name.includes("John") },
+        { label: "Starts with 'John'", value: name.startsWith("John") },
+        { label: "Ends with 'Doe'", value: name.endsWith("Doe") },
+        { label: "Split by space", value: JSON.stringify(name.split(" ")) },
+        { label: "Trimmed", value: name.trim() },
+      ];
 
-            const operations = [
-                { label: "Original String", value: name },
-                { label: "Length", value: name.length },
-                { label: "Uppercase", value: name.toUpperCase() },
-                { label: "Lowercase", value: name.toLowerCase() },
-                { label: "Character at index 2", value: name.charAt(2) },
-                { label: "Index of 'Doe'", value: name.indexOf('Doe') },
-                { label: "Substring (0, 4)", value: name.substring(0, 4) },
-                { label: "Slice (0, 4)", value: name.slice(0, 4) },
-                { label: "Replace 'John' with 'Jane'", value: name.replace('John', 'Jane') },
-                { label: "Includes 'John'", value: name.includes('John') },
-                { label: "Starts with 'John'", value: name.startsWith('John') },
-                { label: "Ends with 'Doe'", value: name.endsWith('Doe') },
-                { label: "Split by space", value: JSON.stringify(name.split(' ')) },
-                { label: "Trimmed", value: name.trim() },
-            ];
-
-            operations.forEach(op => {
-                const div = document.createElement("div");
-                div.className = "output";
-                div.innerHTML = `<strong>${op.label}:</strong> ${op.value}`;
-                output.appendChild(div);
-            });
-        </script>
-    </body>
-
+      operations.forEach((op) => {
+        const div = document.createElement("div");
+        div.className = "output";
+        div.innerHTML = `<strong>${op.label}:</strong> ${op.value}`;
+        output.appendChild(div);
+      });
+    </script>
+  </body>
 </html>

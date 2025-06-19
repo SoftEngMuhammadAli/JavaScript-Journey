@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Validation</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Menu Validation</title>
-    </head>
+  <body>
+    <h3>Form Validation</h3>
+    <form name="myform" action="registration.jsp" onsubmit="return validate()">
+      <select name="color">
+        <option value="">Select a Color</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="purple">Purple</option>
+      </select>
+      <input type="submit" value="submit" />
+    </form>
 
-    <body>
-        <h3>Form Validation</h3>
-        <form name="myform" action="registration.jsp" onsubmit="return validate()">
-            <select name="color">
-                <option value="">Select a Color</option>
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-                <option value="yellow">Yellow</option>
-                <option value="purple">Purple</option>
-            </select>
-            <input type="submit" value="submit">
-        </form>
-
-
-
-        <!-- Script -->
-        <script>
-            function validate() {
-                var color = document.myform.color.value;
-                if (color == "") {
-                    alert("error");
-                    return false;
-                } else {
-                    alert('success');
-                    return true;
-                }
-            }
-        </script>
-    </body>
-
-
+    <!-- Script -->
+    <script>
+      function validate() {
+        var color = document.myform.color.value;
+        if (color == "") {
+          alert("error");
+          return false;
+        } else {
+          alert("success");
+          return true;
+        }
+      }
+    </script>
+  </body>
 </html>

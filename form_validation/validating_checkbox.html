@@ -1,146 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Validation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Menu Validation</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f9;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
-            }
+      .form-container {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
 
-            .form-container {
-                background-color: #ffffff;
-                padding: 2rem;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                width: 100%;
-                max-width: 400px;
-            }
+      h3 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+      }
 
-            h3 {
-                text-align: center;
-                color: #333;
-                margin-bottom: 1.5rem;
-                font-size: 1.5rem;
-            }
+      .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
 
-            .checkbox-group {
-                display: flex;
-                flex-direction: column;
-                gap: 0.75rem;
-                margin-bottom: 1.5rem;
-            }
+      .checkbox-group label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #555;
+        font-size: 1rem;
+        cursor: pointer;
+      }
 
-            .checkbox-group label {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                color: #555;
-                font-size: 1rem;
-                cursor: pointer;
-            }
+      .checkbox-group input[type="checkbox"] {
+        width: 1.25rem;
+        height: 1.25rem;
+        accent-color: #007bff;
+        cursor: pointer;
+      }
 
-            .checkbox-group input[type="checkbox"] {
-                width: 1.25rem;
-                height: 1.25rem;
-                accent-color: #007bff;
-                cursor: pointer;
-            }
+      .checkbox-group input[type="checkbox"]:hover {
+        opacity: 0.8;
+      }
 
-            .checkbox-group input[type="checkbox"]:hover {
-                opacity: 0.8;
-            }
+      input[type="submit"] {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-            input[type="submit"] {
-                width: 100%;
-                padding: 0.75rem;
-                background-color: #007bff;
-                color: white;
-                border: none;
-                border-radius: 4px;
-                font-size: 1rem;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
 
-            input[type="submit"]:hover {
-                background-color: #0056b3;
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="form-container">
-            <h3>Form Validation</h3>
-            <form name="myform" action="registration.jsp" onsubmit="return validate()">
-                <div class="checkbox-group">
-                    <label for="html">
-                        <input type="checkbox" id="html" value="html"> HTML
-                    </label>
-                    <label for="css">
-                        <input type="checkbox" id="css" value="css"> CSS
-                    </label>
-                    <label for="javascript">
-                        <input type="checkbox" id="javascript" value="javascript"> JavaScript
-                    </label>
-                    <label for="python">
-                        <input type="checkbox" id="python" value="python"> Python
-                    </label>
-                    <label for="java">
-                        <input type="checkbox" id="java" value="java"> Java
-                    </label>
-                    <label for="csharp">
-                        <input type="checkbox" id="csharp" value="csharp"> C#
-                    </label>
-                    <label for="ruby">
-                        <input type="checkbox" id="ruby" value="ruby"> Ruby
-                    </label>
-                    <label for="php">
-                        <input type="checkbox" id="php" value="php"> PHP
-                    </label>
-                </div>
-                <input type="submit" value="Submit">
-            </form>
+  <body>
+    <div class="form-container">
+      <h3>Form Validation</h3>
+      <form
+        name="myform"
+        action="registration.jsp"
+        onsubmit="return validate()"
+      >
+        <div class="checkbox-group">
+          <label for="html">
+            <input type="checkbox" id="html" value="html" /> HTML
+          </label>
+          <label for="css">
+            <input type="checkbox" id="css" value="css" /> CSS
+          </label>
+          <label for="javascript">
+            <input type="checkbox" id="javascript" value="javascript" />
+            JavaScript
+          </label>
+          <label for="python">
+            <input type="checkbox" id="python" value="python" /> Python
+          </label>
+          <label for="java">
+            <input type="checkbox" id="java" value="java" /> Java
+          </label>
+          <label for="csharp">
+            <input type="checkbox" id="csharp" value="csharp" /> C#
+          </label>
+          <label for="ruby">
+            <input type="checkbox" id="ruby" value="ruby" /> Ruby
+          </label>
+          <label for="php">
+            <input type="checkbox" id="php" value="php" /> PHP
+          </label>
         </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
 
-        <!-- Script (unchanged) -->
-        <script>
-            function validate() {
-                let valid = false;
-                if (document.getElementById('html').checked) {
-                    valid = true;
-                } else if (document.getElementById('css').checked) {
-                    valid = true;
-                } else if (document.getElementById('javascript').checked) {
-                    valid = true;
-                } else if (document.getElementById('python').checked) {
-                    valid = true;
-                } else if (document.getElementById('java').checked) {
-                    valid = true;
-                } else if (document.getElementById('csharp').checked) {
-                    valid = true;
-                } else if (document.getElementById('ruby').checked) {
-                    valid = true;
-                } else if (document.getElementById('php').checked) {
-                    valid = true;
-                }
+    <!-- Script (unchanged) -->
+    <script>
+      function validate() {
+        let valid = false;
+        if (document.getElementById("html").checked) {
+          valid = true;
+        } else if (document.getElementById("css").checked) {
+          valid = true;
+        } else if (document.getElementById("javascript").checked) {
+          valid = true;
+        } else if (document.getElementById("python").checked) {
+          valid = true;
+        } else if (document.getElementById("java").checked) {
+          valid = true;
+        } else if (document.getElementById("csharp").checked) {
+          valid = true;
+        } else if (document.getElementById("ruby").checked) {
+          valid = true;
+        } else if (document.getElementById("php").checked) {
+          valid = true;
+        }
 
-                if (valid) {
-                    alert("Success");
-                }
-                else {
-                    alert('Please select at least 1');
-                }
-            }
-        </script>
-    </body>
-
+        if (valid) {
+          alert("Success");
+        } else {
+          alert("Please select at least 1");
+        }
+      }
+    </script>
+  </body>
 </html>

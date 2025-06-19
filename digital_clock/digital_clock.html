@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #000;
+        font-family: "Orbitron", sans-serif;
+      }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Digital Clock</title>
-        <style>
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
-                background: #000;
-                font-family: 'Orbitron', sans-serif;
-            }
+      #clock {
+        font-size: 6rem;
+        font-weight: bold;
+        background: black;
+        padding: 20px 50px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        color: white;
+        text-align: center;
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-            #clock {
-                font-size: 6rem;
-                font-weight: bold;
-                background: black;
-                padding: 20px 50px;
-                border-radius: 15px;
-                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-                color: white;
-                text-align: center;
-                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+      @media (max-width: 600px) {
+        #clock {
+          font-size: 4rem;
+          padding: 15px 30px;
+        }
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-            @media (max-width: 600px) {
-                #clock {
-                    font-size: 4rem;
-                    padding: 15px 30px;
-                }
-            }
-        </style>
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    </head>
+  <body>
+    <div id="clock">12:30</div>
+    <script>
+      function updateClock() {
+        const dateTimeNow = new Date();
+        let hours = dateTimeNow.getHours();
+        const minutes = String(dateTimeNow.getMinutes()).padStart(2, "0");
+        const seconds = String(dateTimeNow.getSeconds()).padStart(2, "0");
+        const ampm = hours >= 12 ? "PM" : "AM";
 
-    <body>
-        <div id="clock">12:30</div>
-        <script>
-            function updateClock() {
-                const dateTimeNow = new Date();
-                let hours = dateTimeNow.getHours();
-                const minutes = String(dateTimeNow.getMinutes()).padStart(2, '0');
-                const seconds = String(dateTimeNow.getSeconds()).padStart(2, '0');
-                const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12;
 
-                hours = hours % 12 || 12;
+        const time = `${hours}:${minutes}:${seconds} ${ampm}`;
+        document.getElementById("clock").innerText = time;
+      }
 
-                const time = `${hours}:${minutes}:${seconds} ${ampm}`;
-                document.getElementById('clock').innerText = time;
-            }
-
-            setInterval(updateClock, 1000);
-            updateClock(); 
-        </script>
-    </body>
-
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
 </html>

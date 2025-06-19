@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM: History</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BOM: History</title>
-    </head>
+  <body>
+    <a href="/html_bom/my_website.html">Go to My Website</a>
+    <input type="button" value="forward" onclick="goToHomeScreen" />
 
-    <body>
-        <a href="/html_bom/my_website.html">Go to My Website</a>
-        <input type="button" value="forward" onclick="goToHomeScreen">
+    <script>
+      function goToHomeScreen() {
+        window.history.forward();
+      }
 
-        <script>
-            function goToHomeScreen() {
-                window.history.forward();
-            }
-
-            /// if you want to use back you can use 
-            // .back(); in the my_website.html;
-        </script>
-    </body>
-
+      /// if you want to use back you can use
+      // .back(); in the my_website.html;
+    </script>
+  </body>
 </html>

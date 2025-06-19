@@ -1,100 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Selector</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Image Selector</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        transition: background-color 0.5s ease;
+      }
 
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                transition: background-color 0.5s ease;
-            }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
 
-            h1 {
-                color: #333;
-                margin-bottom: 20px;
-            }
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+      }
 
-            select {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 20px;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                font-size: 16px;
-                background-color: #fff;
-                cursor: pointer;
-                transition: border-color 0.3s ease;
-            }
+      select:hover {
+        border-color: #666;
+      }
 
-            select:hover {
-                border-color: #666;
-            }
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
 
-            .container {
-                background-color: #fff;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                width: 300px;
-                text-align: center;
-            }
+      #image-display {
+        margin-top: 20px;
+        max-width: 100%;
+        border-radius: 5px;
+        display: none;
+      }
 
-            #image-display {
-                margin-top: 20px;
-                max-width: 100%;
-                border-radius: 5px;
-                display: none;
-            }
+      #image-display img {
+        max-width: 100%;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
 
-            #image-display img {
-                max-width: 100%;
-                border-radius: 5px;
-            }
-        </style>
-    </head>
+  <body>
+    <div class="container">
+      <h1>Image Selector</h1>
 
-    <body>
-        <div class="container">
-            <h1>Image Selector</h1>
+      <select onchange="updateImages(this.value)">
+        <option value="">Select Image</option>
+        <option value="/images/image(1).jpg">Image 1</option>
+        <option value="/images/image(2).jpg">Image 2</option>
+        <option value="/images/image(3).jpg">Image 3</option>
+        <option value="reset">Reset</option>
+      </select>
 
-            <select onchange="updateImages(this.value)">
-                <option value="">Select Image</option>
-                <option value="/images/image(1).jpg">Image 1</option>
-                <option value="/images/image(2).jpg">Image 2</option>
-                <option value="/images/image(3).jpg">Image 3</option>
-                <option value="reset">Reset</option>
-            </select>
+      <div id="image-display">
+        <img src="" alt="Selected Image" />
+      </div>
+    </div>
 
-            <div id="image-display">
-                <img src="" alt="Selected Image">
-            </div>
-        </div>
+    <script>
+      function updateImages(value) {
+        const imageDisplay = document.getElementById("image-display");
+        const imgElement = imageDisplay.querySelector("img");
 
-        <script>
-            function updateImages(value) {
-                const imageDisplay = document.getElementById("image-display");
-                const imgElement = imageDisplay.querySelector("img");
-
-                if (value === "reset" || value === "") {
-                    imageDisplay.style.display = "none";
-                    imgElement.src = "";
-                } else {
-                    imgElement.src = value;
-                    imageDisplay.style.display = "block";
-                }
-            }
-        </script>
-    </body>
-
+        if (value === "reset" || value === "") {
+          imageDisplay.style.display = "none";
+          imgElement.src = "";
+        } else {
+          imgElement.src = value;
+          imageDisplay.style.display = "block";
+        }
+      }
+    </script>
+  </body>
 </html>

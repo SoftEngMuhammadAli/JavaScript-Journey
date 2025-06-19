@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On Load Event</title>
+    <script>
+      function onLoadFunction() {
+        alert("Page has loaded!");
+        window.print();
+      }
+    </script>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>On Load Event</title>
-        <script>
-            function onLoadFunction() {
-                alert("Page has loaded!");
-                window.print();
-            }
-        </script>
-    </head>
-
-    <body onload="onLoadFunction()">
-        <h3>Printing this Document</h3>
-    </body>
-
+  <body onload="onLoadFunction()">
+    <h3>Printing this Document</h3>
+  </body>
 </html>

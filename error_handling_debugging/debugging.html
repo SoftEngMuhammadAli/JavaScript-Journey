@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debugging in JS</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Debugging in JS</title>
-    </head>
+  <body>
+    <script>
+      // Example JavaScript code
+      function add(a, b) {
+        console.log("add function called with arguments:", a, b); // Debugging statement
+        return a + b;
+      }
 
-    <body>
-        <script>
-            // Example JavaScript code
-            function add(a, b) {
-                console.log('add function called with arguments:', a, b); // Debugging statement
-                return a + b;
-            }
-
-            let result = add(2, 3);
-            console.log('Result of add function:', result); // Debugging statement
-        </script>
-    </body>
-
+      let result = add(2, 3);
+      console.log("Result of add function:", result); // Debugging statement
+    </script>
+  </body>
 </html>

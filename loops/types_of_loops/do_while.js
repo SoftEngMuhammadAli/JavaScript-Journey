@@ -1,8 +1,7 @@
 let name = 1;
 
-
 do {
-    document.write('Ali <br>');
+  document.write("Ali <br>");
 
-    name++;
+  name++;
 } while (name <= 10);

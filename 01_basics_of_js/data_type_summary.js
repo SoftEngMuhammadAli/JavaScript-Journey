@@ -63,15 +63,15 @@ console.log(typeof fruits); // Output: object
 
 // 2. Object
 let person = {
-    name: "John Doe",
-    age: 30,
+  name: "John Doe",
+  age: 30,
 }; // A collection of key-value pairs
 console.log(person); // Output: { name: "John Doe", age: 30 }
 console.log(typeof person); // Output: object
 
 // 3. Function
 function greet() {
-    return "Hello, World!";
+  return "Hello, World!";
 } // A block of reusable code
 console.log(greet()); // Output: "Hello, World!"
 console.log(typeof greet); // Output: function

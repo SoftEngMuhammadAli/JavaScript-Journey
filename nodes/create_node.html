@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM: Create Node</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DOM: Create Node</title>
-    </head>
+  <body>
+    <div id="div1">
+      <p id="p1">Lorem Text 1</p>
+      <p id="p2">Lorem Text 2</p>
+    </div>
 
-    <body>
-        <div id="div1">
-            <p id="p1">Lorem Text 1</p>
-            <p id="p2">Lorem Text 2</p>
-        </div>
+    <input type="button" value="remove" onclick="removeNode()" />
+    <input type="button" value="create" onclick="createNode()" />
 
-        <input type="button" value="remove" onclick="removeNode()">
-        <input type="button" value="create" onclick="createNode()">
+    <script>
+      function removeNode() {
+        var parent = document.getElementById("div1");
+        var child = document.getElementById("p2");
 
-        <script>
-            function removeNode() {
-                var parent = document.getElementById('div1');
-                var child = document.getElementById('p2');
+        parent.removeChild(child);
+      }
+      function createNode() {
+        var parent = document.getElementById("div1");
 
-                parent.removeChild(child);
-            }
-            function createNode() {
-                var parent = document.getElementById('div1');
+        var child = document.createElement("p");
 
-                var child = document.createElement('p');
+        var text = document.createTextNode("This is new created Node");
 
-                var text = document.createTextNode('This is new created Node');
-
-                child.appendChild(text);
-                parent.appendChild(child);
-
-            }
-        </script>
-    </body>
-
+        child.appendChild(text);
+        parent.appendChild(child);
+      }
+    </script>
+  </body>
 </html>

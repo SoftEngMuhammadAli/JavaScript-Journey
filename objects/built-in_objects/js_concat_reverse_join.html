@@ -1,114 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Concat, Reverse, Join</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JavaScript Concat, Reverse, Join</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
 
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-            }
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+      }
 
-            .container {
-                background-color: #fff;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                width: 100%;
-                max-width: 600px;
-                text-align: left;
-            }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-            h1 {
-                color: #333;
-                margin-bottom: 20px;
-                text-align: center;
-            }
+      .output {
+        font-size: 16px;
+        color: #555;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-left: 4px solid #007bff;
+        border-radius: 5px;
+      }
 
-            .output {
-                font-size: 16px;
-                color: #555;
-                margin: 10px 0;
-                padding: 10px;
-                background-color: #f9f9f9;
-                border-left: 4px solid #007BFF;
-                border-radius: 5px;
-            }
+      .output strong {
+        color: #007bff;
+      }
 
-            .output strong {
-                color: #007BFF;
-            }
+      .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777;
+        text-align: center;
+      }
 
-            .footer {
-                margin-top: 20px;
-                font-size: 14px;
-                color: #777;
-                text-align: center;
-            }
+      .button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-            .button {
-                margin-top: 20px;
-                padding: 10px 20px;
-                font-size: 16px;
-                color: #fff;
-                background-color: #007BFF;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
+      .button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
 
-            .button:hover {
-                background-color: #0056b3;
-            }
-        </style>
-    </head>
+  <body>
+    <div class="container">
+      <h1>JavaScript Concat, Reverse, Join</h1>
 
-    <body>
-        <div class="container">
-            <h1>JavaScript Concat, Reverse, Join</h1>
+      <div id="output"></div>
 
-            <div id="output">
-            </div>
+      <button class="button" onclick="updateOutput()">Update Output</button>
 
-            <button class="button" onclick="updateOutput()">Update Output</button>
+      <div class="footer">
+        <p>Explore JavaScript array methods: concat, reverse, and join!</p>
+      </div>
+    </div>
 
-            <div class="footer">
-                <p>Explore JavaScript array methods: concat, reverse, and join!</p>
-            </div>
-        </div>
+    <script>
+      const output = document.getElementById("output");
 
-        <script>
-            const output = document.getElementById("output");
+      function updateOutput() {
+        const array1 = ["Apple", "Banana"];
+        const array2 = ["Cherry", "Date"];
+        const concatenatedArray = array1.concat(array2);
+        const reversedArray = concatenatedArray.slice().reverse();
+        const joinedArray = concatenatedArray.join(" - ");
 
-            function updateOutput() {
-                const array1 = ['Apple', 'Banana'];
-                const array2 = ['Cherry', 'Date'];
-                const concatenatedArray = array1.concat(array2);
-                const reversedArray = concatenatedArray.slice().reverse();
-                const joinedArray = concatenatedArray.join(' - ');
-
-                output.innerHTML = `
-                <div class="output"><strong>Array 1:</strong> ${JSON.stringify(array1)}</div>
-                <div class="output"><strong>Array 2:</strong> ${JSON.stringify(array2)}</div>
-                <div class="output"><strong>Concatenated Array:</strong> ${JSON.stringify(concatenatedArray)}</div>
-                <div class="output"><strong>Reversed Array:</strong> ${JSON.stringify(reversedArray)}</div>
+        output.innerHTML = `
+                <div class="output"><strong>Array 1:</strong> ${JSON.stringify(
+                  array1
+                )}</div>
+                <div class="output"><strong>Array 2:</strong> ${JSON.stringify(
+                  array2
+                )}</div>
+                <div class="output"><strong>Concatenated Array:</strong> ${JSON.stringify(
+                  concatenatedArray
+                )}</div>
+                <div class="output"><strong>Reversed Array:</strong> ${JSON.stringify(
+                  reversedArray
+                )}</div>
                 <div class="output"><strong>Joined Array:</strong> ${joinedArray}</div>
             `;
-            }
+      }
 
-            updateOutput();
-        </script>
-    </body>
-
+      updateOutput();
+    </script>
+  </body>
 </html>

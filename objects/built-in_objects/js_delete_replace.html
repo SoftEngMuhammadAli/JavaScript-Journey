@@ -1,107 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete & Replace</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Delete & Replace</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-            }
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+      }
 
-            .container {
-                background-color: #fff;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                width: 100%;
-                max-width: 600px;
-                text-align: left;
-            }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-            h1 {
-                color: #333;
-                margin-bottom: 20px;
-                text-align: center;
-            }
+      .output {
+        font-size: 16px;
+        color: #555;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-left: 4px solid #007bff;
+        border-radius: 5px;
+      }
 
-            .output {
-                font-size: 16px;
-                color: #555;
-                margin: 10px 0;
-                padding: 10px;
-                background-color: #f9f9f9;
-                border-left: 4px solid #007BFF;
-                border-radius: 5px;
-            }
+      .output strong {
+        color: #007bff;
+      }
 
-            .output strong {
-                color: #007BFF;
-            }
+      .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777;
+        text-align: center;
+      }
 
-            .footer {
-                margin-top: 20px;
-                font-size: 14px;
-                color: #777;
-                text-align: center;
-            }
+      .button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-            .button {
-                margin-top: 20px;
-                padding: 10px 20px;
-                font-size: 16px;
-                color: #fff;
-                background-color: #007BFF;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
+      .button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
 
-            .button:hover {
-                background-color: #0056b3;
-            }
-        </style>
-    </head>
+  <body>
+    <div class="container">
+      <h1>Delete & Replace Array Elements</h1>
+      <div id="output"></div>
+      <button class="button" onclick="updateOutput()">Update Output</button>
+      <div class="footer">
+        <p>Explore JavaScript array methods: delete and splice!</p>
+      </div>
+    </div>
+    <script>
+      const output = document.getElementById("output");
+      let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
 
-    <body>
-        <div class="container">
-            <h1>Delete & Replace Array Elements</h1>
-            <div id="output"></div>
-            <button class="button" onclick="updateOutput()">Update Output</button>
-            <div class="footer">
-                <p>Explore JavaScript array methods: delete and splice!</p>
-            </div>
-        </div>
-        <script>
-            const output = document.getElementById("output");
-            let fruits = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'];
+      function updateOutput() {
+        const deletedArray = [...fruits];
+        delete deletedArray[1];
 
-            function updateOutput() {
-                const deletedArray = [...fruits];
-                delete deletedArray[1];
+        const replacedArray = [...fruits];
+        replacedArray.splice(2, 1, "Fig");
 
-                const replacedArray = [...fruits];
-                replacedArray.splice(2, 1, 'Fig');
-
-                output.innerHTML = `
-                <div class="output"><strong>Original Array:</strong> ${JSON.stringify(fruits)}</div>
-                <div class="output"><strong>After Delete (Index 1):</strong> ${JSON.stringify(deletedArray)}</div>
-                <div class="output"><strong>After Replace (Index 2 with 'Fig'):</strong> ${JSON.stringify(replacedArray)}</div>
+        output.innerHTML = `
+                <div class="output"><strong>Original Array:</strong> ${JSON.stringify(
+                  fruits
+                )}</div>
+                <div class="output"><strong>After Delete (Index 1):</strong> ${JSON.stringify(
+                  deletedArray
+                )}</div>
+                <div class="output"><strong>After Replace (Index 2 with 'Fig'):</strong> ${JSON.stringify(
+                  replacedArray
+                )}</div>
             `;
-            }
+      }
 
-            updateOutput();
-        </script>
-    </body>
-
+      updateOutput();
+    </script>
+  </body>
 </html>

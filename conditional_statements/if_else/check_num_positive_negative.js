@@ -1,7 +1,7 @@
-let number = parseInt(prompt('Enter a number'));
+let number = parseInt(prompt("Enter a number"));
 
 if (number > 0) {
-    document.write('Positive');
+  document.write("Positive");
 } else {
-    document.write('Negative');
+  document.write("Negative");
 }

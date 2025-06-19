@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On Load Re-Direct Event</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>On Load Re-Direct Event</title>
-    </head>
+  <body onload="onLoadFunction()">
+    <h1>Redirecting to the Google...</h1>
 
-    <body onload="onLoadFunction()">
-        <h1>Redirecting to the Google...</h1>
-
-
-        <script>
-            function onLoadFunction() {
-                alert("Page has loaded!");
-                window.open("https://www.google.com", "_blank");
-            }
-        </script>
-
-
-    </body>
-
+    <script>
+      function onLoadFunction() {
+        alert("Page has loaded!");
+        window.open("https://www.google.com", "_blank");
+      }
+    </script>
+  </body>
 </html>

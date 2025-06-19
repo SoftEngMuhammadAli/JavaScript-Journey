@@ -1,76 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic DOM Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+      }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Basic DOM Example</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f9;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                flex-direction: column;
-            }
+      h1 {
+        font-size: 40px;
+        color: #333;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
 
-            h1 {
-                font-size: 40px;
-                color: #333;
-                margin-bottom: 20px;
-                transition: all 0.3s ease;
-            }
+      button {
+        padding: 12px 24px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
 
-            button {
-                padding: 12px 24px;
-                font-size: 18px;
-                cursor: pointer;
-                background-color: #007BFF;
-                color: white;
-                border: none;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: background-color 0.3s ease, transform 0.2s ease;
-            }
+      button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+      }
 
-            button:hover {
-                background-color: #0056b3;
-                transform: translateY(-2px);
-            }
+      button:active {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
 
-            button:active {
-                transform: translateY(0);
-            }
-        </style>
-    </head>
+  <body>
+    <h1 id="heading">Hello, World!</h1>
+    <button onclick="changeText()">Change Text</button>
+    <br />
+    <button onclick="resetText()">Reset Text</button>
 
-    <body>
-        <h1 id="heading">Hello, World!</h1>
-        <button onclick="changeText()">Change Text</button>
-        <br>
-        <button onclick="resetText()">Reset Text</button>
+    <script>
+      function changeText() {
+        const value = document.getElementById("heading");
+        value.textContent = "Text Changed!";
+        value.style.color = "red";
+        value.style.transform = "rotate(360deg)";
+        value.style.fontSize = "50px";
+      }
 
-        <script>
-            function changeText() {
-                const value = document.getElementById("heading");
-                value.textContent = "Text Changed!";
-                value.style.color = "red";
-                value.style.transform = "rotate(360deg)";
-                value.style.fontSize = "50px";
-            }
-
-            function resetText() {
-                const value = document.getElementById("heading");
-                value.textContent = "Hello, World!";
-                value.style.color = "black";
-                value.style.transform = "none";
-                value.style.fontSize = "none";
-            }
-        </script>
-    </body>
-
+      function resetText() {
+        const value = document.getElementById("heading");
+        value.textContent = "Hello, World!";
+        value.style.color = "black";
+        value.style.transform = "none";
+        value.style.fontSize = "none";
+      }
+    </script>
+  </body>
 </html>

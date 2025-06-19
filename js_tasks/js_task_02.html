@@ -1,88 +1,96 @@
 <!-- 2. *Image Swapping*: Design a page with two images and a button. Upon clicking the button, swap the source attributes of the images. -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Swapping in JavaScript</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Image Swapping in JavaScript</title>
-        <style>
-            body {
-                font-family: 'Arial', sans-serif;
-                background-color: #f4f4f9;
-                color: #333;
-                margin: 0;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-            }
+      h1 {
+        color: #444;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+        text-align: center;
+      }
 
-            h1 {
-                color: #444;
-                margin-bottom: 20px;
-                font-size: 2.5rem;
-                text-align: center;
-            }
+      img {
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        margin: 10px;
+        transition: transform 0.3s ease;
+      }
 
-            img {
-                border: 2px solid #ddd;
-                border-radius: 8px;
-                margin: 10px;
-                transition: transform 0.3s ease;
-            }
+      img:hover {
+        transform: scale(1.05);
+      }
 
-            img:hover {
-                transform: scale(1.05);
-            }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 20px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
 
-            button {
-                background-color: #007bff;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 1rem;
-                margin-top: 20px;
-                transition: background-color 0.3s ease, transform 0.2s ease;
-            }
+      button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
 
-            button:hover {
-                background-color: #0056b3;
-                transform: scale(1.05);
-            }
+      button:active {
+        transform: scale(0.95);
+      }
+    </style>
+  </head>
 
-            button:active {
-                transform: scale(0.95);
-            }
-        </style>
-    </head>
+  <body>
+    <h1>Image Swapper</h1>
 
-    <body>
-        <h1>Image Swapper</h1>
+    <div>
+      <img
+        id="image-1"
+        style="height: 150px; width: 150px"
+        src="/images/image(1).jpg"
+        alt="Image 1"
+      />
+      <img
+        id="image-2"
+        style="height: 150px; width: 150px"
+        src="/images/image(2).jpg"
+        alt="Image 2"
+      />
+    </div>
 
-        <div>
-            <img id="image-1" style="height: 150px; width: 150px;" src="/images/image(1).jpg" alt="Image 1">
-            <img id="image-2" style="height: 150px; width: 150px;" src="/images/image(2).jpg" alt="Image 2">
-        </div>
+    <button onclick="swapImage()">Swap Images</button>
 
-        <button onclick="swapImage()">Swap Images</button>
+    <script>
+      function swapImage() {
+        const image1 = document.getElementById("image-1");
+        const image2 = document.getElementById("image-2");
 
-        <script>
-            function swapImage() {
-                const image1 = document.getElementById('image-1');
-                const image2 = document.getElementById('image-2');
-
-                const temporarySource = image1.src;
-                image1.src = image2.src;
-                image2.src = temporarySource;
-            }
-        </script>
-    </body>
-
+        const temporarySource = image1.src;
+        image1.src = image2.src;
+        image2.src = temporarySource;
+      }
+    </script>
+  </body>
 </html>
 
 <!--  

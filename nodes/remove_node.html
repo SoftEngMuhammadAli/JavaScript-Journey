@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM: Remove & Create Node</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DOM: Remove & Create Node</title>
-    </head>
+  <body>
+    <div id="div1">
+      <p id="p1">Lorem Text 1</p>
+      <p id="p2">Lorem Text 2</p>
+    </div>
 
-    <body>
-        <div id="div1">
-            <p id="p1">Lorem Text 1</p>
-            <p id="p2">Lorem Text 2</p>
-        </div>
+    <input type="button" value="remove" onclick="removeNode()" />
 
-        <input type="button" value="remove" onclick="removeNode()">
+    <script>
+      function removeNode() {
+        var parent = document.getElementById("div1");
+        var child = document.getElementById("p2");
 
-        <script>
-            function removeNode() {
-                var parent = document.getElementById('div1');
-                var child = document.getElementById('p2');
-
-                parent.removeChild(child);
-            }
-        </script>
-    </body>
-
+        parent.removeChild(child);
+      }
+    </script>
+  </body>
 </html>

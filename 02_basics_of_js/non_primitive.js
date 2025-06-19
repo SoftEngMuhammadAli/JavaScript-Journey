@@ -4,18 +4,18 @@ console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]
 
 // Objects
 let person = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 30,
-    fullName: function () {
-        return this.firstName + " " + this.lastName;
-    }
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
 };
 console.log(person.fullName()); // Output: John Doe
 
 // Functions
 function greet(name) {
-    return "Hello, " + name + "!";
+  return "Hello, " + name + "!";
 }
 console.log(greet("Alice")); // Output: Hello, Alice!
 

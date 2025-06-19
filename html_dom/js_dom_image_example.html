@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js DOM Image Example</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Js DOM Image Example</title>
-    </head>
+  <body>
+    <h1 id="title">JS DOM Image Example</h1>
+    <img
+      id="image"
+      style="height: 200px; width: 200px"
+      src="/images/image(1).jpg"
+      alt="Placeholder Image"
+    />
+    <button onclick="update()">Update Image</button>
+    <button onclick="reset()">Reset Image</button>
+    <script>
+      function update() {
+        const value = document.getElementById("image");
+        value.src = "/images/image(2).jpg";
+        value.style.color = "red";
+        value.style.rotate = "90deg";
+      }
 
-    <body>
-        <h1 id="title">JS DOM Image Example</h1>
-        <img id="image" style="height: 200px; width: 200px;" src="/images/image(1).jpg" alt="Placeholder Image">
-        <button onclick="update()">Update Image</button>
-        <button onclick="reset()">Reset Image</button>
-        <script>
-            function update() {
-                const value = document.getElementById('image');
-                value.src = '/images/image(2).jpg';
-                value.style.color = 'red';
-                value.style.rotate = '90deg';
-            }
-
-            function reset() {
-                const value = document.getElementById('image');
-                value.src = '/images/image(1).jpg';
-                value.style.color = 'blue';
-                value.style.rotate = 'none';
-            }
-        </script>
-    </body>
-
-
-
+      function reset() {
+        const value = document.getElementById("image");
+        value.src = "/images/image(1).jpg";
+        value.style.color = "blue";
+        value.style.rotate = "none";
+      }
+    </script>
+  </body>
 </html>

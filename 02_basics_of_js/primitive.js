@@ -21,7 +21,7 @@ let car = null;
 console.log("Null:", car);
 
 // Symbol
-let sym = Symbol('unique');
+let sym = Symbol("unique");
 console.log("Symbol:", sym);
 
 // BigInt

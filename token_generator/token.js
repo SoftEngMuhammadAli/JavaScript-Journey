@@ -9,7 +9,6 @@ function generateToken(length) {
   return token;
 }
 
-// You can change the length as needed
 const tokenLength = 50;
 const token = generateToken(tokenLength);
 console.log(token);

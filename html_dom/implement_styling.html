@@ -1,69 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Implement Styling</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Implement Styling</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+      }
 
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                margin: 0;
-                background-color: #f4f4f9;
-            }
+      h1 {
+        color: #007bff;
+        font-size: 32px;
+        transition: all 0.5s ease;
+      }
 
-            h1 {
-                color: #007BFF;
-                font-size: 32px;
-                transition: all 0.5s ease;
-            }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
 
-            button {
-                padding: 10px 20px;
-                font-size: 16px;
-                cursor: pointer;
-                background-color: #007BFF;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                margin-top: 20px;
-                transition: background-color 0.3s ease;
-            }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
 
-            button:hover {
-                background-color: #0056b3;
-            }
-        </style>
+    <script>
+      let isRotated = false;
 
-        <script>
-            let isRotated = false;
+      function handleCSS() {
+        const value = document.getElementById("title");
 
-            function handleCSS() {
-                const value = document.getElementById('title');
+        value.style.color = "black";
+        value.style.fontSize = "24px";
 
-                value.style.color = 'black';
-                value.style.fontSize = '24px';
+        if (isRotated) {
+          value.style.transform = "rotate(0deg)";
+        } else {
+          value.style.transform = "rotate(90deg)";
+        }
 
-                if (isRotated) {
-                    value.style.transform = 'rotate(0deg)';
-                } else {
-                    value.style.transform = 'rotate(90deg)';
-                }
+        isRotated = !isRotated;
+      }
+    </script>
+  </head>
 
-                isRotated = !isRotated;
-            }
-        </script>
-    </head>
-
-    <body>
-        <h1 id="title">Hello, World</h1>
-        <button onclick="handleCSS()">Click me</button>
-    </body>
-
+  <body>
+    <h1 id="title">Hello, World</h1>
+    <button onclick="handleCSS()">Click me</button>
+  </body>
 </html>

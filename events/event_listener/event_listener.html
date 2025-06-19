@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM: Event Listener</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DOM: Event Listener</title>
-    </head>
+  <body>
+    <button id="btn">Click me</button>
 
-    <body>
-
-        <button id="btn">Click me</button>
-
-
-        <script>
-            function handleEvent() {
-                document.getElementById('btn').addEventListener("click", function () {
-                    alert('Button clicked');
-                });
-            }
-            window.addEventListener("load", handleEvent);
-        </script>
-    </body>
-
+    <script>
+      function handleEvent() {
+        document.getElementById("btn").addEventListener("click", function () {
+          alert("Button clicked");
+        });
+      }
+      window.addEventListener("load", handleEvent);
+    </script>
+  </body>
 </html>
