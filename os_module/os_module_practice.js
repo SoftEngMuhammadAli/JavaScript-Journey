@@ -1,6 +1,6 @@
 const os = require("os");
 
-const listOfVersions = [
+const osModules = [
   os.version(),
   os.hostname(),
   os.platform(),
@@ -14,4 +14,4 @@ const listOfVersions = [
   os.arch(),
 ];
 
-listOfVersions.map((data) => console.log(`Showing by Using Map:> ${data}`));
+osModules.map((data) => console.log(`Showing by Using Map:> ${data}`));
